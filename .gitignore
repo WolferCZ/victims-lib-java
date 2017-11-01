@@ -1,0 +1,13 @@
+# IDE
+.idea/*
+nbactions.xml
+nb-configuration.xml
+.project
+*.iml
+
+# Maven
+target/*
+
+# Gradle
+.gradle/*
+build/*
