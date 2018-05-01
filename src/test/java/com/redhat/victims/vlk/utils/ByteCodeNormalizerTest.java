@@ -15,7 +15,7 @@ public class ByteCodeNormalizerTest {
     public static final String TEST_CLASS_FILE = "/utils/normalization/CSVParserBuilder.class";
     public static final String TEST_NORMALIZED_CLASS_FILE = "/utils/normalization/CSVParserBuilder-normalized.class";
 
-    private ByteCodeNormalizer byteCodeNormalizer;
+    private ByteCodeNormalizerInterface byteCodeNormalizer;
 
     @Before
     public void setUp() throws Exception {

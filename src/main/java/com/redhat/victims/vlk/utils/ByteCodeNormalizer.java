@@ -9,7 +9,7 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 
 
-public class ByteCodeNormalizer {
+public class ByteCodeNormalizer implements ByteCodeNormalizerInterface {
 
 
     private ScannerConfigInterface config;
