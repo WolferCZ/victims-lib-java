@@ -10,11 +10,11 @@ import java.util.Map;
 public class Artifact implements ArtifactInterface{
 
     private List<Artifact> embedded;
-    private String fileType;
+    private FileType fileType;
     private Map<String, String> fingerprint;
     private List<Artifact> content;
     private String filename;
-    private Map<String , String> metadata;
+    private Map<String, Map<String, String>> metadata;
 
     public Artifact() {
     }
@@ -29,11 +29,11 @@ public class Artifact implements ArtifactInterface{
     }
 
     @Override
-    public String getFileType() {
+    public FileType getFileType() {
         return fileType;
     }
 
-    public void setFileType(String fileType) {
+    public void setFileType(FileType fileType) {
         this.fileType = fileType;
     }
 
@@ -65,11 +65,11 @@ public class Artifact implements ArtifactInterface{
     }
 
     @Override
-    public Map<String, String> getMetadata() {
+    public Map<String, Map<String, String>> getMetadata() {
         return metadata;
     }
 
-    public void setMetadata(Map<String, String> metadata) {
+    public void setMetadata(Map<String, Map<String, String>> metadata) {
         this.metadata = metadata;
     }
 
@@ -82,8 +82,7 @@ public class Artifact implements ArtifactInterface{
 
         if (getEmbedded() != null ? !getEmbedded().equals(artifact.getEmbedded()) : artifact.getEmbedded() != null)
             return false;
-        if (getFileType() != null ? !getFileType().equals(artifact.getFileType()) : artifact.getFileType() != null)
-            return false;
+        if (getFileType() != artifact.getFileType()) return false;
         if (getFingerprint() != null ? !getFingerprint().equals(artifact.getFingerprint()) : artifact.getFingerprint() != null)
             return false;
         if (getContent() != null ? !getContent().equals(artifact.getContent()) : artifact.getContent() != null)
@@ -108,7 +107,7 @@ public class Artifact implements ArtifactInterface{
     public String toString() {
         return "Artifact{" +
             "embedded=" + embedded +
-            ", fileType='" + fileType + '\'' +
+            ", fileType=" + fileType +
             ", fingerprint=" + fingerprint +
             ", content=" + content +
             ", filename='" + filename + '\'' +

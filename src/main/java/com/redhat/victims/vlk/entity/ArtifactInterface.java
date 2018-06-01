@@ -13,7 +13,7 @@ public interface ArtifactInterface {
 
     public List<Artifact> getEmbedded();
 
-    public String getFileType();
+    public FileType getFileType();
 
     public Map<String, String> getFingerprint();
 
@@ -21,5 +21,5 @@ public interface ArtifactInterface {
 
     public String getFilename();
 
-    public Map<String, String> getMetadata();
+    public Map<String, Map<String, String>> getMetadata();
 }
