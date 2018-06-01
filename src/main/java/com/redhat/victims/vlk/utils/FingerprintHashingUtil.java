@@ -9,7 +9,7 @@ import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class FingerprintHashingUtil {
+public class FingerprintHashingUtil implements FingerprintHashingUtilInterface{
 
 
     private ScannerConfigInterface config;
@@ -26,7 +26,7 @@ public class FingerprintHashingUtil {
      * @return Map of the form {algorithm:hash}
      */
     public Map<Algorithm, String> fingerprint(byte[] bytes) {
-        Map<Algorithm, String> fingerprint = new HashMap<Algorithm, String>();
+        Map<Algorithm, String> fingerprint = new HashMap<>();
         for (Algorithm algorithm : config.getHashAlgorithmsForProcessing()) {
             try {
                 MessageDigest md = MessageDigest.getInstance(algorithm
