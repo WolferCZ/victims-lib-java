@@ -15,7 +15,7 @@ public interface ArtifactInterface {
 
     public FileType getFileType();
 
-    public Map<String, String> getFingerprint();
+    public Map<HashAlgorithm, String> getFingerprint();
 
     public List<Artifact> getContent();
 

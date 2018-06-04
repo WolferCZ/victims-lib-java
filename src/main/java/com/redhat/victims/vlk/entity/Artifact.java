@@ -11,7 +11,7 @@ public class Artifact implements ArtifactInterface{
 
     private List<Artifact> embedded;
     private FileType fileType;
-    private Map<String, String> fingerprint;
+    private Map<HashAlgorithm, String> fingerprint;
     private List<Artifact> content;
     private String filename;
     private Map<String, Map<String, String>> metadata;
@@ -38,11 +38,11 @@ public class Artifact implements ArtifactInterface{
     }
 
     @Override
-    public Map<String, String> getFingerprint() {
+    public Map<HashAlgorithm, String> getFingerprint() {
         return fingerprint;
     }
 
-    public void setFingerprint(Map<String, String> fingerprint) {
+    public void setFingerprint(Map<HashAlgorithm, String> fingerprint) {
         this.fingerprint = fingerprint;
     }
 
