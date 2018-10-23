@@ -1,6 +1,6 @@
 package com.redhat.victims.vlk.utils;
 
-import com.redhat.victims.vlk.scanner.Algorithm;
+import com.redhat.victims.vlk.entity.HashAlgorithm;
 
 import java.util.Map;
 
@@ -16,5 +16,5 @@ public interface FingerprintHashingUtilInterface {
      * @param bytes A byte array whose content is to be fingerprinted.
      * @return Hashmap of the form {algorithm:hash}
      */
-    public Map<Algorithm, String> fingerprint(byte[] bytes);
+    public Map<HashAlgorithm, String> fingerprint(byte[] bytes);
 }

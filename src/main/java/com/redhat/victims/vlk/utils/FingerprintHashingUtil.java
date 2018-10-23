@@ -1,7 +1,7 @@
 package com.redhat.victims.vlk.utils;
 
 import com.redhat.victims.vlk.config.ScannerConfigInterface;
-import com.redhat.victims.vlk.scanner.Algorithm;
+import com.redhat.victims.vlk.entity.HashAlgorithm;
 import org.apache.commons.codec.binary.Hex;
 
 import java.security.MessageDigest;
@@ -25,9 +25,9 @@ public class FingerprintHashingUtil implements FingerprintHashingUtilInterface{
      * @param bytes A byte array whose content is to be fingerprinted.
      * @return Map of the form {algorithm:hash}
      */
-    public Map<Algorithm, String> fingerprint(byte[] bytes) {
-        Map<Algorithm, String> fingerprint = new HashMap<>();
-        for (Algorithm algorithm : config.getHashAlgorithmsForProcessing()) {
+    public Map<HashAlgorithm, String> fingerprint(byte[] bytes) {
+        Map<HashAlgorithm, String> fingerprint = new HashMap<>();
+        for (HashAlgorithm algorithm : config.getHashAlgorithmsForProcessing()) {
             try {
                 MessageDigest md = MessageDigest.getInstance(algorithm
                     .toString().toUpperCase());
