@@ -1,3 +1,7 @@
+# DEVELOPMENT SUSPENDED
+
+**Development of this library was suspended.**
+
 # victim-lib-java
 
 A Java library which aims to provide fingerprinting/dependency scanning and service interaction for the Victims Project.
