@@ -11,6 +11,9 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <jdk.version>1.8</jdk.version>
+        <license.licenseName>mit</license.licenseName>
+        <license.inceptionYear>2019</license.inceptionYear>
     </properties>
 
 
@@ -19,10 +22,10 @@
     <description>A Java library providing fingerprinting/dependency scanning and service interaction for the Victims Project</description>
     <inceptionYear>2017</inceptionYear>
 
-    <!--<organization>-->
-        <!--<name></name>-->
+    <organization>
+        <name></name>
         <!--<url></url>-->
-    <!--</organization>-->
+    </organization>
 
     <!--<licenses>-->
         <!--<license>-->
@@ -58,6 +61,12 @@
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>2.19</version>
+            <scope>test</scope>
+        </dependency>
 
 
 
@@ -74,10 +83,34 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
-                    <compilerArguments>
-                        <bootclasspath>${sun.boot.class.path}${path.separator}${java.home}/lib/jfxrt.jar</bootclasspath>
-                    </compilerArguments>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>license-maven-plugin</artifactId>
+                <version>1.8</version>
+                <executions>
+                    <execution>
+                        <id>update-file-header</id>
+                        <goals>
+                            <goal>update-file-header</goal>
+                        </goals>
+                        <phase>process-sources</phase>
+                        <configuration>
+                            <licenseName>mit</licenseName>
+                            <roots>
+                                <root>src/main/java</root>
+                                <root>target/generated-sources</root>
+                            </roots>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>add-third-party</id>
+                        <goals>
+                            <goal>add-third-party</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
